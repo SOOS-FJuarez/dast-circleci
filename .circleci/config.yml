@@ -1,0 +1,37 @@
+
+version: 2.1
+
+orbs:
+  sca: soos-io/sca@1.0.13
+  dast: soos-io/dast@1.0.4
+
+workflows:
+  main:
+    jobs:
+      - sca/sca-analysis:
+          client_id: SOOS_CLIENT_ID
+          api_key: SOOS_API_KEY
+          project_name: "sca-circleci-cloud"
+          api_base_url: 'https://qa-api.soos.io/api/'
+          directories_to_exclude: "brew,dart,elixir,yarn"
+          package_managers: ""
+          verbose: true
+      - dast/dast-analysis:
+          client_id: SOOS_CLIENT_ID
+          api_key: SOOS_API_KEY
+          project_name: "dast-circleci-cloud"
+          target_url: 'https://brokencrystals.com/'
+          api_base_url: 'https://qa-api.soos.io/api/'
+      - sca/sca-analysis:
+          client_id: SOOS_CLIENT_ID_PROD
+          api_key: SOOS_API_KEY_PROD
+          project_name: "sca-circleci-cloud"
+          api_base_url: 'https://api.soos.io/api/'
+          directories_to_exclude: "brew,dart,elixir,yarn"
+          package_managers: ""
+      - dast/dast-analysis:
+          client_id: SOOS_CLIENT_ID_PROD
+          api_key: SOOS_API_KEY_PROD
+          project_name: "dast-circleci-cloud"
+          target_url: 'https://brokencrystals.com/'
+          api_base_url: 'https://api.soos.io/api/'
