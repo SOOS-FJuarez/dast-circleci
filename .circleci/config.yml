@@ -7,5 +7,6 @@ workflows:
     jobs:
       - soos/sca-analysis:
           client_id: SOOS_CLIENT_ID
-          api_key: SOOS API Key environment variable name. If it is SOOS_API_KEY
+          api_key: SOOS_API_KEY
           project_name: sca-circleci-test
+          api_base_url: 'https://qa-api.soos.io/api/'
