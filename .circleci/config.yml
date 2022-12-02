@@ -11,5 +11,5 @@ workflows:
           project_name: sca-circleci-test
           api_base_url: 'https://qa-api.soos.io/api/'
           verbosity: test
-          verbose: tru
+          verbose: 
 
