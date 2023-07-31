@@ -1,6 +1,6 @@
-version: 2.1
+version: alpha
 orbs:
-  soos: soos-io/dast@alpha # Get the latest version at https://circleci.com/developer/orbs/orb/soos-io/dast
+  soos: soos-io/dast@x.y.z # Get the latest version at https://circleci.com/developer/orbs/orb/soos-io/dast
 
 workflows:
   main:
@@ -11,6 +11,8 @@ workflows:
           project_name: dast-circleci-qa
           api_base_url: "https://qa-api.soos.io/api/"
           target_url: "https://joaquinalvarez.dev/"
+          on_failure: "continue_on_failure"
+          scan_mode: "baseline"
           
           
          
