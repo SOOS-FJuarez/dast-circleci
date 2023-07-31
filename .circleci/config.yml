@@ -9,7 +9,8 @@ workflows:
           client_id: SOOS_CLIENT_ID
           api_key: SOOS_API_KEY
           project_name: dast-circleci-qa
-          target_url: 'https://qa-api.soos.io/api/'
+          api_base_url: "https://qa-api.soos.io/api/"
+          target_url: "https://joaquinalvarez.dev/"
           
           
          
