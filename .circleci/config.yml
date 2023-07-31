@@ -1,18 +1,16 @@
 version: 2.1
 orbs:
-  soos: soos-io/sca@1.0.13 # Get the latest version at https://circleci.com/developer/orbs/orb/soos-io/sca
+  soos: soos-io/dast@alpha # Get the latest version at https://circleci.com/developer/orbs/orb/soos-io/dast
 
 workflows:
   main:
     jobs:
-      - soos/sca-analysis:
+      - soos/run-dast-analysis:
           client_id: SOOS_CLIENT_ID
           api_key: SOOS_API_KEY
-          project_name: sca-circleci-test
-          api_base_url: 'https://api.soos.io/api/'
-          verbosity: "DEBUG"
-          verbose: false
-
+          project_name: dast-circleci-qa
+          target_url: 'https://qa-api.soos.io/api/'
+          
           
          
          
