@@ -1,6 +1,6 @@
 version: alpha
 orbs:
-  soos: soos-io/dast@x.y.z # Get the latest version at https://circleci.com/developer/orbs/orb/soos-io/dast
+  soos: soos-io/dast@dev:alpha # Get the latest version at https://circleci.com/developer/orbs/orb/soos-io/dast
 
 workflows:
   main:
